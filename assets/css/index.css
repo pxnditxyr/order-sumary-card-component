@@ -1,6 +1,208 @@
+:root {
+    --primary-pale-blue: hsl(225, 100%, 94%);
+    --primary-bright-blue: hsl(245, 75%, 52%);
+
+    --neutral-very-pale-blue: hsl(225, 100%, 98%);
+    --neutral-desaturated-blue: hsl(224, 23%, 55%);
+    --neutral-dark-blue: hsl(223, 47%, 23%);
+
+    --action-buttons-border-color: #D57E7E;
+    --action-buttons-background-color: #C6D57E;
+    --action-buttons-text-color: #252525;
+    --title-color: #252525;
+    --text-color: #FFF;
+    --button-paymant-text-color: #FFF;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    background-image: url( "../images/pattern-background-mobile.svg" );
+    background-color: var( --primary-pale-blue );
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    text-align: center;
+    margin: 10px;
+    color: var( --title-color );
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-buttons button {
+    padding: 10px 20px;
+    border: 3px solid var( --action-buttons-border-color );
+    background-color: var( --action-buttons-background-color ); 
+    border-radius: 15px;
+    color: var( --action-buttons-text-color );
+    margin: 10px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#gallery {
+    display: grid;
+    gap: 1em 2em;
+    grid-template-columns: repeat( auto-fill, minmax( 22rem, 1fr ) );
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.card {
+    width: 325px;
+    height: 580px;
+    background-color: var( --neutral-very-pale-blue );
+    color: var( --text-color );
+    border: 5px solid var( --card-border-color );
+    border-radius: 20px;
+    
+}
+
+.card-image-container {
+    width: 100%;
+    height: 180px;
+}
+
+.card-image-container img {
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+    color: var( --neutral-dark-blue );
+
+    padding: 5px 20px;
+}
+
+.card-information { 
+    padding: 0 20px;
+}
+
+.card-information h2 {
+    font-size: 1.4em;
+    font-weight: 900;
+    margin-top: 15px;
+    color: var( --neutral-dark-blue );
+}
+
+.card-information p {
+    font-size: 0.9em;
+    margin: 20px 0;
+    color: var( --neutral-desaturated-blue );
+}
+
+.card-plan {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var( --neutral-very-pale-blue );
+    margin: 0 5px;
+    box-sizing: border-box;
+    padding: 15px 10px;
+    border-radius: 10px;
+}
+
+.card-plan img {
+    margin-right: 15px;
+}
+
+.card-plan-info span {
+    font-weight: 900;
+    font-size: 0.9em;
+}
+
+.card-plan-info p {
+    font-size: 0.8em;
+}
+
+
+.card-plan a {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.button-payment {
+    padding: 15px 20px;
+    background-color: var( --primary-bright-blue );
+    border: none;
+    margin: 5px 0;
+    color: var( --button-paymant-text-color );
+    width: 100%;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.button-cancel {
+    background: none;
+    border: none;
+    color: var( --neutral-desaturated-blue );
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 15px 20px;
+}
+
+@media screen and ( min-width: 900px ) {
+    .card {
+        width: clamp( 325px, 450px, 450px );
+        height: 580px;
+        background-color: var( --neutral-very-pale-blue );
+        color: var( --text-color );
+        border: 5px solid var( --card-border-color );
+        border-radius: 20px;
+    }   
+
+    #gallery {
+        display: grid;
+        gap: 1em 2em;
+        grid-template-columns: repeat( auto-fill, minmax( 30rem, 1fr ) );
+        justify-items: center;
+        align-items: center;
+        margin-top: 20px;
+        width: 100%;
+    }
 }
